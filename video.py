@@ -16,7 +16,7 @@ def main():
     parser.add_argument(
         '--fps',
         type=int,
-        default=60,
+        default=120,
         help='FPS (Frames per second) setting for the video.')
     args = parser.parse_args()
 
@@ -34,9 +34,9 @@ def main():
     clip = ImageSequenceClip(image_list, fps=args.fps)
     
     try:
-        clip.write_videofile(video_file_1)
+        clip.write_videofile(video_file_1,codec='mpeg4')
     except:
-        clip.write_videofile(video_file_2)
+        clip.write_videofile(video_file_2,codec='mpeg4')
 
 
 if __name__ == '__main__':
